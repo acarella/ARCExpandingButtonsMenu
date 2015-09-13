@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ujk-vt-s7y" customClass="ARCRollingButtonsMenu">
+                                <rect key="frame" x="16" y="267" width="55" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt0-CL-kFR">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <state key="normal" title="Animate Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vD6-dC-X9X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-Cd-xec">
+                                <rect key="frame" x="16" y="66" width="568" height="30"/>
+                                <state key="normal" title="Animate In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OIZ-1b-Mw2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rt0-CL-kFR" firstAttribute="leading" secondItem="Ujk-vt-s7y" secondAttribute="leading" id="3Hf-uS-iw3"/>
+                            <constraint firstItem="lwe-Cd-xec" firstAttribute="trailing" secondItem="Rt0-CL-kFR" secondAttribute="trailing" id="3qB-7Y-dct"/>
+                            <constraint firstItem="Rt0-CL-kFR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9hN-Xy-DLF"/>
+                            <constraint firstItem="Rt0-CL-kFR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Vex-dQ-Am8"/>
+                            <constraint firstItem="lwe-Cd-xec" firstAttribute="leading" secondItem="Rt0-CL-kFR" secondAttribute="leading" id="cvV-F8-9Lh"/>
+                            <constraint firstItem="Rt0-CL-kFR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="drX-vx-Go5"/>
+                            <constraint firstItem="lwe-Cd-xec" firstAttribute="top" secondItem="Rt0-CL-kFR" secondAttribute="bottom" constant="8" symbolic="YES" id="jKk-FU-N7H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonsMenu" destination="Ujk-vt-s7y" id="pwM-lJ-rZu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
