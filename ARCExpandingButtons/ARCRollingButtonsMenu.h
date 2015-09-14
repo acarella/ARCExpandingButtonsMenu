@@ -22,12 +22,12 @@
 @property NSTimeInterval animationDuration;
 @property (strong, nonatomic) NSArray *buttons;
 @property float padding;
+@property BOOL addSpin;
+@property BOOL rollOutLeftToRight;
 
 -(instancetype)initWithFrame:(CGRect)frame buttons:(NSArray *)buttons;
 
 -(void)animateButtonsOut;
 -(void)animateButtonsIn;
-
--(void)rollOutLeftToRight;
 
 @end
