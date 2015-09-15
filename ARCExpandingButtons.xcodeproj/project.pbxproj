@@ -14,7 +14,7 @@
 		BEB9790F1BA4FC16008AA01E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9790E1BA4FC16008AA01E /* Images.xcassets */; };
 		BEB979121BA4FC16008AA01E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB979101BA4FC16008AA01E /* LaunchScreen.xib */; };
 		BEB9791E1BA4FC16008AA01E /* ARCExpandingButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB9791D1BA4FC16008AA01E /* ARCExpandingButtonsTests.m */; };
-		BEB9792B1BA4FC3A008AA01E /* ARCRollingButtonsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB979291BA4FC3A008AA01E /* ARCRollingButtonsMenu.m */; };
+		BEB9792B1BA4FC3A008AA01E /* ARCExpandingButtonsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB979291BA4FC3A008AA01E /* ARCExpandingButtonsMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE0EAE5F1BA77D060040A134 /* ARCExpandingButtonsEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCExpandingButtonsEnum.h; sourceTree = "<group>"; };
 		BEB978FE1BA4FC16008AA01E /* ARCExpandingButtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCExpandingButtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB979021BA4FC16008AA01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB979031BA4FC16008AA01E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,8 +42,8 @@
 		BEB979171BA4FC16008AA01E /* ARCExpandingButtonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARCExpandingButtonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB9791C1BA4FC16008AA01E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB9791D1BA4FC16008AA01E /* ARCExpandingButtonsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARCExpandingButtonsTests.m; sourceTree = "<group>"; };
-		BEB979281BA4FC3A008AA01E /* ARCRollingButtonsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCRollingButtonsMenu.h; sourceTree = "<group>"; };
-		BEB979291BA4FC3A008AA01E /* ARCRollingButtonsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCRollingButtonsMenu.m; sourceTree = "<group>"; };
+		BEB979281BA4FC3A008AA01E /* ARCExpandingButtonsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCExpandingButtonsMenu.h; sourceTree = "<group>"; };
+		BEB979291BA4FC3A008AA01E /* ARCExpandingButtonsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCExpandingButtonsMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +85,8 @@
 		BEB979001BA4FC16008AA01E /* ARCExpandingButtons */ = {
 			isa = PBXGroup;
 			children = (
-				BEB979281BA4FC3A008AA01E /* ARCRollingButtonsMenu.h */,
-				BEB979291BA4FC3A008AA01E /* ARCRollingButtonsMenu.m */,
+				BEB979281BA4FC3A008AA01E /* ARCExpandingButtonsMenu.h */,
+				BEB979291BA4FC3A008AA01E /* ARCExpandingButtonsMenu.m */,
 				BEB979051BA4FC16008AA01E /* AppDelegate.h */,
 				BEB979061BA4FC16008AA01E /* AppDelegate.m */,
 				BEB979081BA4FC16008AA01E /* ViewController.h */,
@@ -94,6 +95,7 @@
 				BEB9790E1BA4FC16008AA01E /* Images.xcassets */,
 				BEB979101BA4FC16008AA01E /* LaunchScreen.xib */,
 				BEB979011BA4FC16008AA01E /* Supporting Files */,
+				BE0EAE5F1BA77D060040A134 /* ARCExpandingButtonsEnum.h */,
 			);
 			path = ARCExpandingButtons;
 			sourceTree = "<group>";
@@ -226,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB9790A1BA4FC16008AA01E /* ViewController.m in Sources */,
-				BEB9792B1BA4FC3A008AA01E /* ARCRollingButtonsMenu.m in Sources */,
+				BEB9792B1BA4FC3A008AA01E /* ARCExpandingButtonsMenu.m in Sources */,
 				BEB979071BA4FC16008AA01E /* AppDelegate.m in Sources */,
 				BEB979041BA4FC16008AA01E /* main.m in Sources */,
 			);
@@ -427,6 +429,7 @@
 				BEB979231BA4FC16008AA01E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEB979241BA4FC16008AA01E /* Build configuration list for PBXNativeTarget "ARCExpandingButtonsTests" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +438,7 @@
 				BEB979261BA4FC16008AA01E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

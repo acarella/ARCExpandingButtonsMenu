@@ -1,27 +1,29 @@
 //
-//  ARCRollingButtonsMenu.m
+//  ARCExpandingButtonsMenu.m
 //  Created by Antonio Carella on 9/11/15.
 //
 //
 
-#import "ARCRollingButtonsMenu.h"
+#import "ARCExpandingButtonsMenu.h"
 
-@interface ARCRollingButtonsMenu()
+@interface ARCExpandingButtonsMenu()
 
 @end
 
-@implementation ARCRollingButtonsMenu{
+@implementation ARCExpandingButtonsMenu{
     
     NSMutableArray *rolledOutPositions;
     BOOL rollRightToLeft;
     BOOL shouldSpin;
-    
+    int direction;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame buttons:(NSArray *)buttons{
     
     self.animationDelay = 0.0;
     self.animationDuration = 0.2;
+    
+    direction = ARCExpandingButtonsDirectionLeftToRight;
     
     if( self = [super initWithFrame:frame]) {
         for (int i = 0; i < buttons.count; i++) {
@@ -40,22 +42,30 @@
 
 -(void)animateButtonsOut{
     
-    int frameXDirection = 1;
+    int frameDeltaDirection;
     
-    if (rollRightToLeft){
-        frameXDirection = -1;
+    if (direction == ARCExpandingButtonsDirectionLeftToRight || direction == ARCExpandingButtonsDirectionTopToBottom) {
+        frameDeltaDirection = 1;
+    } else {
+        frameDeltaDirection = -1;
     }
+
     
     [UIView animateWithDuration:self.animationDuration delay:self.animationDelay options:UIViewAnimationOptionCurveLinear animations:^{
         
-        float xCoordConstant = 0;
+        float coordConstant = 0;
         
         for (int i = 0; i < self.buttons.count; i++) {
             UIButton *button = [self.buttons objectAtIndex:i];
             
             if (i > 0) {
                 UIButton *previousButton = [self.buttons objectAtIndex:i-1];
-                xCoordConstant += previousButton.frame.size.width + self.padding;
+                if ((direction == ARCExpandingButtonsDirectionLeftToRight || direction == ARCExpandingButtonsDirectionRightToLeft)) {
+                    coordConstant += previousButton.frame.size.width + self.padding;
+                } else {
+                    coordConstant += previousButton.frame.size.height + self.padding;
+                }
+
                 
                 if (shouldSpin) {
                     CABasicAnimation *fullRotation;
@@ -66,8 +76,12 @@
                     [button.layer addAnimation:fullRotation forKey:@"360"];
                 }
             }
-            button.frame = CGRectMake(button.frame.origin.x + (xCoordConstant * frameXDirection), button.frame.origin.y, button.frame.size.height, button.frame.size.width);
-            //button.transform = CGAffineTransformRotate(button.transform, -M_PI_2);
+            
+            if (direction == ARCExpandingButtonsDirectionLeftToRight || direction == ARCExpandingButtonsDirectionRightToLeft) {
+                 button.frame = CGRectMake(button.frame.origin.x + (coordConstant * frameDeltaDirection), button.frame.origin.y, button.frame.size.height, button.frame.size.width);
+            } else {
+                 button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y + (coordConstant * frameDeltaDirection), button.frame.size.height, button.frame.size.width);
+            }
             
         }
         
@@ -84,13 +98,18 @@
         
         for (int i = 0; i < self.buttons.count; i++) {
             UIButton *button = [self.buttons objectAtIndex:i];
-            button.frame = CGRectMake(0, button.frame.origin.y, button.frame.size.height, button.frame.size.width);
+            button.frame = CGRectMake(0, 0, button.frame.size.height, button.frame.size.width);
         }
         
     } completion:^(BOOL finished) {
         NSLog(@"Animate Out Finished");
     }];
     
+}
+
+-(void)chooseDirection:(ARCExpandingButtonsEnum)directionEnum{
+
+    direction = directionEnum;
 }
 
 @end

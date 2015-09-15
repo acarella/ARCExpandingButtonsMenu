@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "ARCRollingButtonsMenu.h"
+#import "ARCExpandingButtonsMenu.h"
 
 @interface ViewController ()
 
-@property (strong, nonatomic) ARCRollingButtonsMenu *buttonsMenu;
-@property (strong, nonatomic) ARCRollingButtonsMenu *buttonsMenuTwo;
+@property (strong, nonatomic) ARCExpandingButtonsMenu *buttonsMenu;
+@property (strong, nonatomic) ARCExpandingButtonsMenu *buttonsMenuTwo;
 
 @end
 
@@ -41,15 +41,16 @@
         [buttonsArrayTwo addObject:button];
     }
     
-    self.buttonsMenu = [[ARCRollingButtonsMenu alloc]initWithFrame:CGRectMake(10, 150, 50, 50) buttons:buttonsArray];
+    self.buttonsMenu = [[ARCExpandingButtonsMenu alloc]initWithFrame:CGRectMake(10, 150, 50, 50) buttons:buttonsArray];
     [self.buttonsMenu setAnimationDelay:0.0];
     [self.buttonsMenu setPadding:2.0];
+    [self.buttonsMenu chooseDirection:ARCExpandingButtonsDirectionTopToBottom];
     [self.view addSubview:self.buttonsMenu];
     
-    self.buttonsMenuTwo = [[ARCRollingButtonsMenu alloc]initWithFrame:CGRectMake(310, 250, 50, 50) buttons:buttonsArrayTwo];
+    self.buttonsMenuTwo = [[ARCExpandingButtonsMenu alloc]initWithFrame:CGRectMake(310, 250, 50, 50) buttons:buttonsArrayTwo];
     [self.buttonsMenuTwo setAnimationDelay:0.0];
     [self.buttonsMenuTwo setPadding:2.0];
-    [self.buttonsMenuTwo rollOutLeftToRight];
+    [self.buttonsMenuTwo chooseDirection:ARCExpandingButtonsDirectionBottomToTop];
     [self.view addSubview:self.buttonsMenuTwo];
 }
 
